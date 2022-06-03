@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+  --color-black: #111;
+  --color-white: #fff;
+  --color-gray1: #eee;
+  --color-gray2: #ddd;
+  --color-gray3: #ccc;
+  --color-red: #ff0000;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Inter";
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+input {
+  font-family: "Inter";
+}
+
+a {
+  text-decoration: none;
+}
+
+.title {
+  padding: 1rem 0;
+  margin: 1.5rem 0;
+  border-bottom: 1px solid var(--color-gray1);
+}

@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.link {
+  flex: 1;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.remove-btn {
+  border: none;
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.icon {
+  color: var(--color-gray3);
+}
+
+.remove-btn:disabled {
+  cursor: default;
+}

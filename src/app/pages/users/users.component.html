@@ -1,0 +1,34 @@
+<div class="users-page">
+  <section class="section section-form">
+    <div *ngIf="isOpenForm; else formClosed">
+      <h3 class="title">Add new user:</h3>
+      <app-user-form
+        [isLoading]="isLoading"
+        (onSubmit)="onAddUser($event)"
+        (onCancel)="onClose()"
+      ></app-user-form>
+    </div>
+    <ng-template #formClosed>
+      <button class="btn-icon" (click)="onOpen()">
+        <mat-icon class="icon">add</mat-icon>
+      </button>
+    </ng-template>
+  </section>
+
+  <section class="section section-list">
+    <h3 class="title">Users list:</h3>
+    <p class="loading" *ngIf="isLoading">Loading...</p>
+    <div *ngIf="usersList.length > 0">
+      <ul class="list">
+        <li *ngFor="let user of usersList" class="item">
+          <app-user-item
+            [user]="user"
+            (onDeleteUser)="onDeleteUser($event)"
+          ></app-user-item>
+        </li>
+      </ul>
+      <p class="guide"><i>Click on user to edit</i></p>
+    </div>
+    <p *ngIf="!isLoading && !usersList.length">There is no users!</p>
+  </section>
+</div>

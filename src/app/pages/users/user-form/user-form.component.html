@@ -1,0 +1,40 @@
+<form class="form" [formGroup]="userForm" (ngSubmit)="handleSubmit()">
+  <div class="form-group">
+    <div class="form-input">
+      <label for="name" class="label-control">Name:</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="form-control"
+      />
+    </div>
+    <div *ngIf="name?.invalid && name?.touched" class="form-error">
+      <ng-container [ngSwitch]="true">
+        <span *ngSwitchCase="name.hasError('required')">Required field</span>
+        <span *ngSwitchCase="name.hasError('maxlength')">Max length 15</span>
+        <span *ngSwitchCase="name.hasError('minlength')">Min length 5</span>
+      </ng-container>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-input">
+      <label for="age" class="label-control">Age:</label>
+      <input type="text" id="age" formControlName="age" class="form-control" />
+    </div>
+    <div *ngIf="age?.invalid && age?.touched" class="form-error">
+      <ng-container [ngSwitch]="true">
+        <span *ngSwitchCase="age.hasError('required')">Required field</span>
+        <span *ngSwitchCase="age.hasError('pattern')">Age is a number</span>
+      </ng-container>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-cancel" type="button" (click)="handleCancel()">
+      Cancel
+    </button>
+    <button class="btn btn-submit" type="submit" [disabled]="isLoading">
+      Submit
+    </button>
+  </div>
+</form>

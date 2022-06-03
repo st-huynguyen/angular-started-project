@@ -1,0 +1,7 @@
+<div class="item">
+  <a [routerLink]="[user.id]" class="link">{{ user.name }}</a>
+  <span>{{ user.age }}</span>
+  <button [disabled]="disabled" (click)="deleteUser()" class="remove-btn">
+    <mat-icon class="icon">delete</mat-icon>
+  </button>
+</div>

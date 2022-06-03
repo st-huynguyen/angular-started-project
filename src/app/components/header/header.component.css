@@ -1,0 +1,9 @@
+.header {
+  padding: 2rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-gray1);
+}
+
+.heading {
+  text-align: center;
+}

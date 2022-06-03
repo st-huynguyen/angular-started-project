@@ -1,0 +1,11 @@
+<div class="home-page">
+  <section class="section section-about">
+    <h3 class="title">Angular concepts:</h3>
+    <ul class="list">
+      <li *ngFor="let item of features" class="item">{{ item }}</li>
+    </ul>
+    <div class="action">
+      <a [routerLink]="'/users'" class="link">Go to users page</a>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,14 @@
+<div class="users-page">
+  <section class="section section-form">
+    <h3 class="title">Update user:</h3>
+
+    <div *ngIf="userDetail?.id">
+      <span class="id">ID: {{ userDetail.id }}</span>
+      <app-user-form
+        [user]="userDetail"
+        (onSubmit)="onUpdateUser($event)"
+        (onCancel)="onClose()"
+      ></app-user-form>
+    </div>
+  </section>
+</div>

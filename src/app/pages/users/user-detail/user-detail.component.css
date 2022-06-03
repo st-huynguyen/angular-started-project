@@ -1,0 +1,10 @@
+.users-page {
+  max-width: 25rem;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+.id {
+  display: block;
+  margin-bottom: 1rem;
+}
